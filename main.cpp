@@ -1,19 +1,25 @@
 #include <iostream>
 
-
+// concept for integral types
+template<class T>
+concept integer_concept = std::is_integral_v<T>;
 
 template <
 	typename T
 	>
-requires std::is_integral_v<T>
+requires integer_concept<T>
 void print(T a){
 	std::cout << "This is an integer: " << a << std::endl;
 }
 
+// concept for floating types
+template<class T>
+concept float_concept = std::is_floating_point_v<T>;
+
 template <
 	typename T
 	>
-requires std::is_floating_point_v<T>
+requires float_concept<T>
 void print(T a){
 	std::cout << "This is a floating point: " << a << std::endl;
 }
