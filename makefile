@@ -1,6 +1,6 @@
 # Specify the target file and the install directory
 OUTPUTFILE=myprog.exe
-CFLAGS=-std=c++17
+CFLAGS=-std=c++20 -fconcepts
 
 # Default target
 .PHONY: all
