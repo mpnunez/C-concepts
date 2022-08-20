@@ -3,13 +3,20 @@
 
 
 template <
-	typename T
+	typename T,
+	std::enable_if_t<std::is_integral_v<T>,bool> dummyparam = true		// Can omit the name of dummyparam
 	>
 void print(T a){
-	std::cout << "This is a number: " << a << std::endl;
+	std::cout << "This is an integer: " << a << std::endl;
 }
 
-
+template <
+	typename T,
+	std::enable_if_t<std::is_floating_point_v<T>,bool> dummyparam = true		// Can omit the name of dummyparam
+	>
+void print(T a){
+	std::cout << "This is a floating point: " << a << std::endl;
+}
 
 int main(){
 	
